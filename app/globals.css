@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+
+/* === DESIGN TOKENS for 異端 (ITAN) === */
+
+:root {
+    /* Primary colors */
+    --color-red: #d72a1e;
+    --color-red-deep: #9b1a14;
+    --color-ink: #0f0c08;
+    --color-cream: #f5f1e8;
+    --color-paper: #ede7d8;
+
+    /* Accent colors (4-color cycle) */
+    --color-blue: #1c47ff;
+    --color-yellow: #ffe000;
+    --color-lime: #c8ff2c;
+    --color-pink: #ff66a0;
+
+    /* Muted */
+    --color-muted: rgba(255, 255, 255, 0.65);
+
+    /* Typography */
+    --font-display: 'Dela Gothic One', sans-serif;
+    --font-serif: 'Shippori Mincho B1', serif;
+    --font-serif-alt: 'Zen Old Mincho', serif;
+    --font-sans-custom: 'Zen Kaku Gothic New', sans-serif;
+    --font-mono-custom: 'JetBrains Mono', monospace;
+    --font-mono-display: 'Major Mono Display', monospace;
+    --font-reggae: 'Reggae One', cursive;
+    --font-dot: 'DotGothic16', sans-serif;
+
+    /* Standard */
+    --background: #f5f1e8;
+    --foreground: #0f0c08;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-sans-custom);
+    --font-mono: var(--font-mono-custom);
+
+    /* Custom color tokens */
+    --color-red: var(--color-red);
+    --color-red-deep: var(--color-red-deep);
+    --color-ink: var(--color-ink);
+    --color-cream: var(--color-cream);
+    --color-paper: var(--color-paper);
+    --color-blue: var(--color-blue);
+    --color-yellow: var(--color-yellow);
+    --color-lime: var(--color-lime);
+    --color-pink: var(--color-pink);
+
+    /* Font families */
+    --font-display: var(--font-display);
+    --font-serif: var(--font-serif);
+    --font-mono-display: var(--font-mono-display);
+    --font-reggae: var(--font-reggae);
+    --font-dot: var(--font-dot);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0f0c08;
+        --foreground: #f5f1e8;
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scribble-draw {
+    from {
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+/* === GLOBAL STYLES for 異端 === */
+
+body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-serif);
+    font-weight: 500;
+    line-height: 1.85;
+    overflow-x: hidden;
+    /* No rounded corners anywhere */
+    border-radius: 0;
+}
+
+/* Hard shadows — no blur */
+.shadow-hard {
+    box-shadow: 6px 6px 0 0 var(--color-ink);
+}
+
+.shadow-hard-sm {
+    box-shadow: 4px 4px 0 0 var(--color-ink);
+}
+
+.shadow-hard-lg {
+    box-shadow: 8px 8px 0 0 var(--color-ink);
+}
+
+/* Thick black borders */
+.border-thick {
+    border: 2.5px solid var(--color-ink);
+}
+
+.border-thick-lg {
+    border: 3px solid var(--color-ink);
+}
+
+/* Micro-rotations for cards */
+.microrot-1 {
+    transform: rotate(-1deg);
+}
+.microrot-2 {
+    transform: rotate(1deg);
+}
+.microrot-3 {
+    transform: rotate(-2deg);
+}
+.microrot-4 {
+    transform: rotate(1.5deg);
+}
+.microrot-5 {
+    transform: rotate(-0.8deg);
+}
+
+/* No rounded corners anywhere */
+*,
+*::before,
+*::after {
+    border-radius: 0 !important;
+}
